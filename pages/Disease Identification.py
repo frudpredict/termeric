@@ -7,10 +7,9 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 
 model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 
-col1, col2 = st.columns([1, 1])
 container = st.container()
 
-col1.subheader("Disease Identification")
+st.subheader("Disease Identification")
 uploaded_file = st.file_uploader("Choose a image file")
 
 ### load file
@@ -30,14 +29,14 @@ if uploaded_file is not None:
     resized = cv2.resize(opencv_image,(224,224))
     # Now do something with the image! For example, let's display it:
     st.image(opencv_image, channels="RGB")
-
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
 
     Genrate_pred = st.button("Disease")    
     if Genrate_pred:
-        prediction = model.predict(img_reshape).argmax()
-        col1.title("Predicted Disease for the image is {}".format(map_dict [prediction]))
+            col1, col2 = st.columns([1, 1])
+            prediction = model.predict(img_reshape).argmax()
+            st.title("Predicted Disease for the image is {}".format(map_dict [prediction]))
         if(map_dict [prediction] == 'Leaf Blotch'):
             col1.title('Leaf Blotch')
             col1.text('The fungus is mainly air borne and primary infection occurs on lower leaves with the inoculum surviving in dried leaves of host, left over in the field. The ascospores discharged from successively maturing asci infect fresh leaves without dormancy, thus causing secondary infection. Secondary infection is most dangerous than primary one causing profuse sprouting all over the leaves. The pathogen persists in summer by means of acrogenous cells on leaf debris, and desiccated ascospores and blastopores in soil and among fallen leaves.')
