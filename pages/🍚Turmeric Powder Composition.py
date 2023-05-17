@@ -17,7 +17,7 @@ map_dict = {0: '100Riceflour',
             4:'Riceflour90Turmericpowder',
             5:'Riceflour85Turmericpowder'
             }
-col1, col2 = st.columns(3)
+col1, col2 = st.columns(2)
 
 if uploaded_file is not None:
     # Convert the file to an opencv image.
