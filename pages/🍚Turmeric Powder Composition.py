@@ -10,12 +10,12 @@ model = tf.keras.models.load_model("saved_model/frud.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = {0: 'Originalriceflour100%',
-            1:'Fraudturmericpowder5%',  
-            2:'Fraudturmericpowder25%',
-            3:'Originalturmericpowder100%',
-            4:'Fraudturmericpowder10%',
-            5:'Fraudturmericpowder15% '
+map_dict = {0: '100Riceflour',
+            1:'Riceflour95Turmeric',  
+            2:'RiceFlour75Turmericpowder',
+            3:'100Turmericpowder',
+            4:'Riceflour90Turmericpowder',
+            5:'Riceflour85Turmericpowder'
             }
 
 if uploaded_file is not None:
