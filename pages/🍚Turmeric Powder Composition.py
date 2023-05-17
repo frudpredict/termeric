@@ -17,7 +17,6 @@ map_dict = {0: '100Riceflour',
             4:'Riceflour90Turmericpowder',
             5:'Riceflour85Turmericpowder'
             }
-col1, col2 = st.columns(2)
 
 if uploaded_file is not None:
     # Convert the file to an opencv image.
@@ -30,8 +29,8 @@ if uploaded_file is not None:
 
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
-
-    Genrate_pred = st.button("Fraud Percentage")    
+    Genrate_pred = st.button("Fraud Percentage")
+    col1, col2 = st.columns(2)
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         with col1:
