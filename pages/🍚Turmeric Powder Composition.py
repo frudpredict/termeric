@@ -36,13 +36,13 @@ if uploaded_file is not None:
         prediction = model.predict(img_reshape).argmax()
         col1, col2 = st.columns(3)
         with col1:
-        st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
+            st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
-        if(map_dict [prediction] == '100Turmericpowder'):
-            progress_text_one = "Termeric"
-            my_bar_one = st.progress(0, text=progress_text_one)
-            my_bar_one.progress(100, text=progress_text_one)
-            progress_text_two = "Toxic"
-            my_bar_two = st.progress(0, text=progress_text_two)
-            my_bar_two.progress(0, text=progress_text_two)
+            if(map_dict [prediction] == '100Turmericpowder'):
+                        progress_text_one = "Termeric"
+                        my_bar_one = st.progress(0, text=progress_text_one)
+                        my_bar_one.progress(100, text=progress_text_one)
+                        progress_text_two = "Toxic"
+                        my_bar_two = st.progress(0, text=progress_text_two)
+                        my_bar_two.progress(0, text=progress_text_two)
          
