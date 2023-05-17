@@ -10,12 +10,12 @@ model = tf.keras.models.load_model("saved_model/frud.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = {0: '100Riceflour',
-            1:'Riceflour95Turmeric',  
-            2:'RiceFlour75Turmericpowder',
-            3:'100Turmericpowder',
-            4:'Riceflour90Turmericpowder',
-            5:'Riceflour85Turmericpowder'
+map_dict = {0: 'Original rice flour 100%',
+            1:'Fraud turmeric powder 5%',  
+            2:'Fraud turmeric powder 25%',
+            3:'Original turmeric powder 100%',
+            4:'Fraud turmeric powder 10%',
+            5:'Fraud turmeric powder 15% '
             }
 
 if uploaded_file is not None:
@@ -34,7 +34,7 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         with col1:
-            st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
+            st.text("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
             if(map_dict [prediction] == '100Turmericpowder'):
                         progress_text_one = "Termeric 100%"
