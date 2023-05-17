@@ -6,6 +6,9 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 import time
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 model = tf.keras.models.load_model("saved_model/frud.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
