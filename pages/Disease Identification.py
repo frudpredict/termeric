@@ -9,10 +9,11 @@ model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 
 col1, col2 = st.columns([1, 1])
 
-col1.subheader("Disease Identification")
+
 uploaded_file = st.file_uploader("Choose a image file")
 
-col2.subheader("A narrow column with the data")
+
+col1.subheader("Disease Identification Results")
 
 
 ### load file
