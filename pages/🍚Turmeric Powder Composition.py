@@ -34,7 +34,7 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         with col1:
-            st.text("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
+            st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
             if(map_dict [prediction] == '100Turmericpowder'):
                         progress_text_one = "Termeric 100%"
