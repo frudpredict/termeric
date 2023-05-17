@@ -35,8 +35,7 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
-        progress_text = "Operation in progress. Please wait."
+        if(map_dict [prediction] == '100Turmericpowder'):
+        progress_text = "Termeric %"
         my_bar = st.progress(0, text=progress_text)
-        for percent_complete in range(100):
-            time.sleep(0.1)
-            my_bar.progress(percent_complete + 1, text=progress_text)
+        my_bar.progress(100, text=progress_text)
