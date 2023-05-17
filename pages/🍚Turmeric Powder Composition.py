@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
+import time
 
 model = tf.keras.models.load_model("saved_model/frud.hdf5")
 ### load file
@@ -34,3 +35,8 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
+        progress_text = "Operation in progress. Please wait."
+        my_bar = st.progress(0, text=progress_text)
+        for percent_complete in range(100):
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1, text=progress_text)
