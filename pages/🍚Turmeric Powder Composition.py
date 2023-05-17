@@ -17,7 +17,7 @@ map_dict = {0: '100Riceflour',
             4:'Riceflour90Turmericpowder',
             5:'Riceflour85Turmericpowder'
             }
-
+col1, col2 = st.columns(3)
 
 if uploaded_file is not None:
     # Convert the file to an opencv image.
@@ -34,7 +34,6 @@ if uploaded_file is not None:
     Genrate_pred = st.button("Fraud Percentage")    
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
-        col1, col2 = st.columns(3)
         with col1:
             st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
