@@ -37,10 +37,10 @@ if uploaded_file is not None:
             st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
             if(map_dict [prediction] == '100Turmericpowder'):
-                        progress_text_one = "Termeric"
+                        progress_text_one = "Termeric 100%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(100, text=progress_text_one)
-                        progress_text_two = "Toxic"
+                        progress_text_two = "Toxic 0%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(0, text=progress_text_two)
          
