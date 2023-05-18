@@ -13,12 +13,13 @@ model = tf.keras.models.load_model("saved_model/frud.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = {0:'Turmeric',
-            1:'Riceflour',
-            2:'R95Turmeric',
-            3:'R75Turmeric',
-            4:'R85Turmeric',
-            5:'R90Turmeric'
+map_dict = {0:'R75Turmeric',
+            1:'R85Turmeric',
+            2:'R90Turmeric',
+            3:'R95Turmeric',
+            4:'Riceflour',
+            5:'Turmeric',
+            6:'Not'
             }
 
 if uploaded_file is not None:
@@ -49,6 +50,8 @@ if uploaded_file is not None:
             st.markdown('Thank you for using our adulterant detection system for turmeric powder. Based on the uploaded image, our system has analyzed the sample and detected the presence of rice flour, indicating that the sample is adulterated. The system used a machine learning approach to arrive at this conclusion with a probability score of 85%. The results are displayed below in a chart that compares the chemical profiles of the original turmeric powder and the adulterated sample. We recommend further testing and verification to confirm these findings and ensure the safety and authenticity of your turmeric powder. ')
         if(map_dict [prediction] == 'R90Turmeric'):
             st.markdown('Thank you for using our adulterant detection system for turmeric powder. Based on the uploaded image, our system has analyzed the sample and detected the presence of rice flour, indicating that the sample is adulterated. The system used a machine learning approach to arrive at this conclusion with a probability score of 90%. The results are displayed below in a chart that compares the chemical profiles of the original turmeric powder and the adulterated sample. We recommend further testing and verification to confirm these findings and ensure the safety and authenticity of your turmeric powder. ')
+        if(map_dict [prediction] == 'Not'):
+            st.markdown('This is Not  Turmeric')
         with col1:
             st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
@@ -100,4 +103,12 @@ if uploaded_file is not None:
                         progress_text_two = "Toxic 90%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(90, text=progress_text_two)
+             if(map_dict [prediction] == 'Not'):
+                        st.title("Frud Results")
+                        progress_text_one = "Termeric 0%"
+                        my_bar_one = st.progress(0, text=progress_text_one)
+                        my_bar_one.progress(0, text=progress_text_one)
+                        progress_text_two = "Toxic 0%"
+                        my_bar_two = st.progress(0, text=progress_text_two)
+                        my_bar_two.progress(0, text=progress_text_two)
           
