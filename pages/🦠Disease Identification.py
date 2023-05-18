@@ -10,7 +10,8 @@ model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 uploaded_file = st.file_uploader("Choose a image file")
 
 map_dict = { 0:'LeafBlotch',
-             1:'turmericbulbs'
+             1:'Leaf Spot',
+             2:'NOT'
             }
 
 
