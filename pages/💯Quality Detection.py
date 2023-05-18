@@ -14,6 +14,7 @@ map_dict = { 0:'turmericfingers',
              2:'sproutedturmeric',
              3:'insectdamages',
              4:'healthyrawturmeric',
+             5:'Not'
             }
 
 
@@ -38,11 +39,28 @@ if uploaded_file is not None:
         st.text(map_dict [prediction])
         if(map_dict [prediction] == 'turmericfingers'):
             st.title('grade A')
+            progress_text_one = "100%"
+            my_bar_one = st.progress(0, text=progress_text_one)
+            my_bar_one.progress(100, text=progress_text_one)
         if(map_dict [prediction] == 'turmericbulbs'):
             st.title('grade B')
+            progress_text_one = "100%"
+            my_bar_one = st.progress(0, text=progress_text_one)
+            my_bar_one.progress(100, text=progress_text_one)
         if(map_dict [prediction] == 'sproutedturmeric'):
             st.title('grade E')
+            progress_text_one = "100%"
+            my_bar_one = st.progress(0, text=progress_text_one)
+            my_bar_one.progress(100, text=progress_text_one)
         if(map_dict [prediction] == 'insectdamages'):
             st.title('grade D')
+            progress_text_one = "100%"
+            my_bar_one = st.progress(0, text=progress_text_one)
+            my_bar_one.progress(100, text=progress_text_one)
         if(map_dict [prediction] == 'healthyrawturmeric'):
             st.title('grade C')
+            progress_text_one = "100%"
+            my_bar_one = st.progress(0, text=progress_text_one)
+            my_bar_one.progress(100, text=progress_text_one)
+        if(map_dict [prediction] == 'Not'):
+            st.title('This is Not a Termeric')
