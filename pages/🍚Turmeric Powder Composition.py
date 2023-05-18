@@ -18,7 +18,7 @@ map_dict = {0:'Turmeric',
             2:'R90Turmeric',
             3:'R95Turmeric',
             4:'Riceflour',
-            5:'Turmeric',
+            5:'R90Turmeric',
             6:'Not'
             }
 
