@@ -34,8 +34,21 @@ if uploaded_file is not None:
     img_reshape = resized[np.newaxis,...]
     Genrate_pred = st.button("Fraud Percentage")
     col1, col2 = st.columns(2)
+    
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
+        if(map_dict [prediction] == 'Turmeric'):
+            st.text('this is termeric')
+        if(map_dict [prediction] == 'Riceflour'):
+            st.text('this is termeric')
+        if(map_dict [prediction] == 'R95Turmeric'):
+            st.text('this is termeric')
+        if(map_dict [prediction] == 'R75Turmeric'):
+            st.text('this is termeric')
+        if(map_dict [prediction] == 'R85Turmeric'):
+            st.text('this is termeric')
+        if(map_dict [prediction] == 'R90Turmeric'):
+            st.text('this is termeric')
         with col1:
             st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
@@ -87,3 +100,4 @@ if uploaded_file is not None:
                         progress_text_two = "Toxic 90%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(90, text=progress_text_two)
+          
