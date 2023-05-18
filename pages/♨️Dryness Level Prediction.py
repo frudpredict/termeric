@@ -11,8 +11,9 @@ uploaded_file = st.file_uploader("Choose a image file")
 
 map_dict = {0:'Toodryturmeric',
             1:'Half Dry',
-            2:'Driedturmeric',
-            3:'NOT'
+            2:'Half Dry2',
+            3:'Driedturmeric',
+            4:'NOT'
             }
 
 
@@ -37,6 +38,8 @@ if uploaded_file is not None:
         if(map_dict [prediction] == 'Half Dry'):
             st.text('The turmeric in the uploaded image has not dried enough to make a powder. You have to dry the turmeric for another 2 or 3 days to make the powders. ')
         if(map_dict [prediction] == 'Driedturmeric'):
+            st.text('The turmeric in the uploaded image has dried enough to make powders')
+        if(map_dict [prediction] == 'Half Dry2'):
             st.text('The turmeric in the uploaded image has dried enough to make powders')
         if(map_dict [prediction] == 'NOT'):
             st.text('Now you can make turmeric powders')
