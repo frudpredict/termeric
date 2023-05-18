@@ -8,7 +8,7 @@ from streamlit_cropper import st_cropper
 from PIL import Image
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-img_file = st.sidebar.file_uploader(label='Upload a file', type=['png', 'jpg'])
+img_file = st.file_uploader("Choose a image file")
 realtime_update = st.sidebar.checkbox(label="Update in Real Time", value=True)
 box_color = st.sidebar.color_picker(label="Box Color", value='#0000FF')
 aspect_choice = st.sidebar.radio(label="Aspect Ratio", options=["1:1", "16:9", "4:3", "2:3", "Free"])
