@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 
 
@@ -10,12 +11,10 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title("Main Page")
+st.title("Yellow Root")
 st.sidebar.success("Select a page above.")
+image = Image.open('sunrise.jpg')
+
+st.image(image, caption='Sunrise by the mountains')
 
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
-
-st.line_chart(chart_data)
