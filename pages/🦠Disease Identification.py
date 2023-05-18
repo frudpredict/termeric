@@ -8,17 +8,35 @@ from streamlit_cropper import st_cropper
 from PIL import Image
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
+img_file = st.sidebar.file_uploader(label='Upload a file', type=['png', 'jpg'])
+realtime_update = st.sidebar.checkbox(label="Update in Real Time", value=True)
+box_color = st.sidebar.color_picker(label="Box Color", value='#0000FF')
+aspect_choice = st.sidebar.radio(label="Aspect Ratio", options=["1:1", "16:9", "4:3", "2:3", "Free"])
+aspect_dict = {
+    "1:1": (1, 1),
+    "16:9": (16, 9),
+    "4:3": (4, 3),
+    "2:3": (2, 3),
+    "Free": None
+}
+aspect_ratio = aspect_dict[aspect_choice]
+
+if img_file:
+    img = Image.open(img_file)
+    if not realtime_update:
+        st.write("Double click to save crop")
+    # Get a cropped image from the frontend
+    cropped_img = st_cropper(img, realtime_update=realtime_update, box_color=box_color,
+                                aspect_ratio=aspect_ratio)
+    
+    # Manipulate cropped image at will
+    st.write("Preview")
+    _ = cropped_img.thumbnail((150,150))
+    st.image(cropped_img)
+    
 model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
-img = Image.open(uploaded_file)
-cropped_img = st_cropper(img, realtime_update=realtime_update, box_color=box_color,
-                                aspect_ratio=aspect_ratio)
-    
-# Manipulate cropped image at will
-st.write("Preview")
-_ = cropped_img.thumbnail((150,150))
-st.image(cropped_img)
 
 map_dict = {
             0:'Leaf Blotch',
@@ -26,10 +44,9 @@ map_dict = {
             }
 
 
-if cropped_img is not None:
+if uploaded_file is not None:
     # Convert the file to an opencv image.
-    
-    file_bytes = np.asarray(bytearray(cropped_img.read()), dtype=np.uint8)
+    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
     opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
     resized = cv2.resize(opencv_image,(224,224))
