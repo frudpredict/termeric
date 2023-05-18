@@ -41,7 +41,7 @@ if uploaded_file is not None:
         if(map_dict [prediction] == 'Turmeric'):
             st.markdown('this is turmeric')
         if(map_dict [prediction] == 'Riceflour'):
-            st.markdown('this is termeric')
+            st.markdown('this is Riceflour')
         if(map_dict [prediction] == 'R95Turmeric'):
             st.markdown('Thank you for using our adulterant detection system for turmeric powder. Based on the uploaded image, our system has analyzed the sample and detected the presence of rice flour, indicating that the sample is adulterated. The system used a machine learning approach to arrive at this conclusion with a probability score of 95%. The results are displayed below in a chart that compares the chemical profiles of the original turmeric powder and the adulterated sample. We recommend further testing and verification to confirm these findings and ensure the safety and authenticity of your turmeric powder.')
         if(map_dict [prediction] == 'R75Turmeric'):
