@@ -21,6 +21,12 @@ aspect_dict = {
     "2:3": (2, 3),
     "Free": None
 }
+
+map_dict = {
+            0:'Leaf Blotch',
+            1:'Leaf Spot'
+            }
+
 aspect_ratio = aspect_dict[aspect_choice]
 
 if img_file:
@@ -41,19 +47,6 @@ if img_file:
     container = st.container()
 
     st.subheader("Disease Identification")
-    uploaded_file = cropped_img
-
-### load file
-
-
-map_dict = {
-            0:'Leaf Blotch',
-            1:'Leaf Spot'
-            }
-
-
-if img_file is not None:
-    # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(img_file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
     opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
@@ -77,4 +70,6 @@ if img_file is not None:
                  st.text('The fungus is carried on the scales of rhizomes which are the source of primary infection during sowing. The secondary spread is by wind, water and other physical and biological agents. The same pathogen is also reported to cause leaf-spot and fruit rot of chili where it is transmitted through seed borne infections. If chili is grown in nearby fields or used in crop rotation with turmeric, the pathogen perpetuates easily, building up inoculum potential for epiphytotic outbreaks.')
                  st.title('Recommndation')
                  st.markdown('Spray mancozeb @ 2.5 g/liter of water or carbendazim @ 1g/litre; 2-3 sprays at fortnightly intervals.The infected and dried leaves should be collected and burnt in order to reduce the inoculum source in the field.')
-            
+
+
+
