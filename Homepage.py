@@ -13,8 +13,8 @@ st.set_page_config(
 
 st.title("Yellow Root")
 st.sidebar.success("Select a page above.")
-image = Image.open('sunrise.jpg')
+image = Image.open('top.jpg')
 
-st.image(image, caption='Sunrise by the mountains')
+st.image(image, caption='@Yellow Root')
 
 
