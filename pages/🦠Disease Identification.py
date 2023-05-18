@@ -36,12 +36,12 @@ if img_file:
     _ = cropped_img.thumbnail((150,150))
     st.image(cropped_img)
 
-model = tf.keras.models.load_model("saved_model/diseases.hdf5")
+    model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 
-container = st.container()
+    container = st.container()
 
-st.subheader("Disease Identification")
-uploaded_file = st.file_uploader("Choose a image file")
+    st.subheader("Disease Identification")
+    uploaded_file = cropped_img
 
 ### load file
 
