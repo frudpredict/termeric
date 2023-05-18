@@ -15,9 +15,9 @@ uploaded_file = st.file_uploader("Choose a image file")
 
 map_dict = {0:'Turmeric',
             1:'Riceflour',
-            2:'R95Turmeric'
-            3:'R75Turmeric'
-            4:'R85Turmeric'
+            2:'R95Turmeric',
+            3:'R75Turmeric',
+            4:'R85Turmeric',
             5:'R90Turmeric'
             }
 
