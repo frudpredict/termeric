@@ -51,7 +51,7 @@ if img_file:
     img_reshape = resized[np.newaxis,...]
 
     Genrate_pred = st.button("Disease")    
-        if Genrate_pred:
+    if Genrate_pred:
             prediction = model.predict(img_reshape).argmax()
             st.title("Predicted Disease for the image is {}".format(map_dict [prediction]))
             if(map_dict [prediction] == 'Leaf Blotch'):
