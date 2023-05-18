@@ -32,10 +32,12 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         st.title("Predicted Dryness Level for the image is {}".format(map_dict [prediction]))
-        if(map_dict [prediction] == 'Half_Dry'):
-            st.text('You need to dry more days to make turmeric powders')
-        if(map_dict [prediction] == 'More_dry'):
-            st.text('You can not make turmeric powders. Because Your turmerics are More dried')
-        if(map_dict [prediction] == 'Dried'):
+        if(map_dict [prediction] == 'Toodryturmeric'):
+            st.text('The turmeric in the uploaded image is too dry and cannot be used for making powders. ')
+        if(map_dict [prediction] == 'Half Dry'):
+            st.text('The turmeric in the uploaded image has not dried enough to make a powder. You have to dry the turmeric for another 2 or 3 days to make the powders. ')
+        if(map_dict [prediction] == 'Driedturmeric'):
+            st.text('The turmeric in the uploaded image has dried enough to make powders')
+        if(map_dict [prediction] == 'NOT'):
             st.text('Now you can make turmeric powders')
            
