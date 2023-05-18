@@ -36,11 +36,11 @@ if uploaded_file is not None:
         if(map_dict [prediction] == 'Toodryturmeric'):
             st.text('The turmeric in the uploaded image is too dry and cannot be used for making powders. ')
         if(map_dict [prediction] == 'Half Dry'):
-            st.text('The turmeric in the uploaded image has not dried enough to make a powder. You have to dry the turmeric for another 2 or 3 days to make the powders. ')
+            st.text('The turmeric in the uploaded image has not dried enough to make a powder. You have to dry the turmeric for another 2 or 3 days to make the powders.')
         if(map_dict [prediction] == 'Driedturmeric'):
             st.text('The turmeric in the uploaded image has dried enough to make powders')
         if(map_dict [prediction] == 'Half Dry2'):
-            st.text('The turmeric in the uploaded image has dried enough to make powders')
+            st.text('The turmeric in the uploaded image has not dried enough to make a powder. You have to dry the turmeric for another 1 or 2 days to make the powders. ')
         if(map_dict [prediction] == 'NOT'):
-            st.text('Now you can make turmeric powders')
+            st.text('Not a Turmeric')
            
