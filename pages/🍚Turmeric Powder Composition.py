@@ -57,7 +57,7 @@ if uploaded_file is not None:
         with col2:
             if(map_dict [prediction] == 'Turmeric'):
                         st.title("Frud Results")
-                        progress_text_one = "Termeric 100%"
+                        progress_text_one = "Turmeric 100%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(100, text=progress_text_one)
                         progress_text_two = "Toxic 0%"
