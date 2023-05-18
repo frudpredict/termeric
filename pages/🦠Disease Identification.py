@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
+from streamlit_cropper import st_cropper
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 from PIL import Image
 st.set_option('deprecation.showfileUploaderEncoding', False)
