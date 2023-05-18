@@ -9,11 +9,8 @@ model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = { 0:'turmericfingers',
-             1:'turmericbulbs',
-             2:'sproutedturmeric',
-             3:'insectdamages',
-             4:'healthyrawturmeric',
+map_dict = { 0:'LeafBlotch',
+             1:'turmericbulbs'
             }
 
 
@@ -29,20 +26,15 @@ if uploaded_file is not None:
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
 
-    Genrate_pred = st.button("Grade")    
+    Genrate_pred = st.button("Disease")    
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         # if(map_dict [prediction] == 'turmericfingers'){
         #     Grade = 1
         # }
         st.text(map_dict [prediction])
-        if(map_dict [prediction] == 'turmericfingers'):
+        if(map_dict [prediction] == 'LeafBlotch'):
             st.title('grade A')
         if(map_dict [prediction] == 'turmericbulbs'):
             st.title('grade B')
-        if(map_dict [prediction] == 'sproutedturmeric'):
-            st.title('grade E')
-        if(map_dict [prediction] == 'insectdamages'):
-            st.title('grade D')
-        if(map_dict [prediction] == 'healthyrawturmeric'):
-            st.title('grade C')
+
