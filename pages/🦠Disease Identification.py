@@ -9,8 +9,7 @@ model = tf.keras.models.load_model("saved_model/diseases.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = {
-            0:'Leaf Blotch',
+map_dict = {0:'Leaf Blotch',
             1:'Leaf Spot'
             }
 
