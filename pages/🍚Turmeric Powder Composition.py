@@ -39,7 +39,7 @@ if uploaded_file is not None:
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
         if(map_dict [prediction] == 'Turmeric'):
-            st.markdown('this is termeric')
+            st.markdown('this is turmeric')
         if(map_dict [prediction] == 'Riceflour'):
             st.markdown('this is termeric')
         if(map_dict [prediction] == 'R95Turmeric'):
