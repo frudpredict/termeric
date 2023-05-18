@@ -103,7 +103,7 @@ if uploaded_file is not None:
                         progress_text_two = "Toxic 90%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(90, text=progress_text_two)
-             if(map_dict [prediction] == 'Not'):
+            if(map_dict [prediction] == 'Not'):
                         st.title("Frud Results")
                         progress_text_one = "Termeric 0%"
                         my_bar_one = st.progress(0, text=progress_text_one)
