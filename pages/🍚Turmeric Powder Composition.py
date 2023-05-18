@@ -56,7 +56,7 @@ if uploaded_file is not None:
             st.title("Predicted Fraud Percentage for the image is {}".format(map_dict [prediction]))
         with col2:
             if(map_dict [prediction] == 'Turmeric'):
-                        st.title("Frud Results")
+                        st.title("Fraud Results")
                         progress_text_one = "Turmeric 100%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(100, text=progress_text_one)
@@ -64,48 +64,48 @@ if uploaded_file is not None:
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(0, text=progress_text_two)
             if(map_dict [prediction] == 'Riceflour'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 0%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 0%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(0, text=progress_text_one)
                         progress_text_two = "Toxic 0%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(100, text=progress_text_two)
             if(map_dict [prediction] == 'R95Turmeric'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 5%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 5%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(5, text=progress_text_one)
                         progress_text_two = "Toxic 95%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(95, text=progress_text_two)
             if(map_dict [prediction] == 'R75Turmeric'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 25%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 25%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(25, text=progress_text_one)
                         progress_text_two = "Toxic 75%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(75, text=progress_text_two)
             if(map_dict [prediction] == 'R85Turmeric'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 15%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 15%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(15, text=progress_text_one)
                         progress_text_two = "Toxic 85%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(85, text=progress_text_two)
             if(map_dict [prediction] == 'R90Turmeric'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 10%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 10%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(10, text=progress_text_one)
                         progress_text_two = "Toxic 90%"
                         my_bar_two = st.progress(0, text=progress_text_two)
                         my_bar_two.progress(90, text=progress_text_two)
             if(map_dict [prediction] == 'Not'):
-                        st.title("Frud Results")
-                        progress_text_one = "Termeric 0%"
+                        st.title("Fraud Results")
+                        progress_text_one = "Turmeric 0%"
                         my_bar_one = st.progress(0, text=progress_text_one)
                         my_bar_one.progress(0, text=progress_text_one)
                         progress_text_two = "Toxic 0%"
