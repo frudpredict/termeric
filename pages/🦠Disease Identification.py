@@ -39,7 +39,7 @@ if img_file:
     st.write("Preview")
     _ = cropped_img.thumbnail((150,150))
     st.image(cropped_img)
-    if cropped_img is not None:
+    if img_file is not None:
     # Convert the file to an opencv image.
         file_bytes = np.asarray(bytearray(img_file.read()), dtype=np.uint8)
         opencv_image = cv2.imdecode(file_bytes, 1)
