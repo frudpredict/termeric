@@ -9,10 +9,10 @@ model = tf.keras.models.load_model("saved_model/dryness.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file")
 
-map_dict = {0:'Half Dry2',
+map_dict = {0:'Half Dry1',
             1:'Toodryturmeric',
-            2:'Half Dry',
-            3:'NOT',
+            2:'Not',
+            3:'Half Dry2',
             4:'Driedturmeric'
             }
 
