@@ -68,5 +68,5 @@ if uploaded_file is not None:
             st.title('Recommndation')
             st.markdown('Select seed material from disease free areas.•	Treat the seed material with Mancozeb @ 3g/liter of water or Carbendazim @ 1 g/liter of water for 30 minutes and shade dry before sowing.•	Spray mancozeb @ 2.5 g/liter of water or Carbendazim @ 1g/liter; 2-3 sprays at fortnightly intervals.•	The infected and dried leaves should be collected and burnt in order to reduce the inoculum source in the field.•	Spraying Copper oxy chloride at 3 g/l of water was found effective against leaf blotch.')
         if(map_dict [prediction] == 'NOT'):
-            st.title('Not a Turmeric')
+            st.title('Not a Disease')
 
