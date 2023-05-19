@@ -29,6 +29,17 @@ aspect_dict = {
 aspect_ratio = aspect_dict[aspect_choice]
 
 if uploaded_file is not None:
+    img = Image.open(uploaded_file)
+    if not realtime_update:
+        st.write("Double click to save crop")
+    # Get a cropped image from the frontend
+    cropped_img = st_cropper(img, realtime_update=realtime_update, box_color=box_color,
+                                aspect_ratio=aspect_ratio)
+    
+    # Manipulate cropped image at will
+    st.write("Preview")
+    _ = cropped_img.thumbnail((150,150))
+    st.image(cropped_img)
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
